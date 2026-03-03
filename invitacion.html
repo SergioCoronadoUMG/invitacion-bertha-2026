@@ -181,7 +181,10 @@ for (let i = 0; i < 40; i++) {
 
 // WhatsApp
 function confirmar() {
-    window.open("https://wa.me/50256353511?text=Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Bertha%20Lisbeth 🔥", "_blank");
+    const mensaje = "Confirmo mi asistencia al cumpleaños de Bertha Lisbeth 🔥";
+    const numero = "50256353511"; // solo números, sin + ni espacios
+
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
 }
 
 // Música
