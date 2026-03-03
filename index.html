@@ -53,7 +53,6 @@ body {
     100% { opacity: 0; visibility: hidden; }
 }
 
-/* Capa oscura */
 .overlay {
     position: fixed;
     width: 100%;
@@ -62,7 +61,6 @@ body {
     z-index: 0;
 }
 
-/* Contenido principal */
 .container {
     position: relative;
     z-index: 2;
@@ -83,7 +81,6 @@ body {
     }
 }
 
-/* Títulos */
 h1 {
     font-size: clamp(1.8rem, 6vw, 3rem);
     color: #ff3c00;
@@ -124,7 +121,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* 🔥 Partículas */
 .particle {
     position: absolute;
     width: 8px;
@@ -143,7 +139,6 @@ button:hover {
 
 <body>
 
-<!-- INTRO -->
 <div class="intro">
     <h1>🔥 Preparando la misión... 🔥</h1>
 </div>
@@ -164,6 +159,26 @@ button:hover {
 
     <button onclick="confirmar()">⚔️ Confirmar Asistencia</button>
     <button onclick="activarMusica()">🎵 Activar Música</button>
+
+    <!-- Ubicación -->
+    <section style="margin-top:40px;">
+      <h2>📍 Ubicación del Evento</h2>
+      <a href="https://maps.app.goo.gl/DdCDTTsvyF55fNez6"
+         target="_blank"
+         style="
+            display:inline-block;
+            padding:14px 30px;
+            background:#25D366;
+            color:white;
+            text-decoration:none;
+            border-radius:40px;
+            font-weight:bold;
+            font-size:16px;
+            box-shadow:0 6px 15px rgba(0,0,0,0.2);">
+         📍 Abrir en Google Maps
+      </a>
+    </section>
+
 </div>
 
 <audio id="musica" src="musica.mp3" loop></audio>
@@ -181,7 +196,9 @@ for (let i = 0; i < 40; i++) {
 
 // WhatsApp
 function confirmar() {
-    window.open("https://wa.me/50256353511?text=Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Bertha%20Lisbeth 🔥", "_blank");
+    const mensaje = "Confirmo mi asistencia al cumpleaños de Bertha Lisbeth 🔥";
+    const numero = "50256353511";
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
 }
 
 // Música
